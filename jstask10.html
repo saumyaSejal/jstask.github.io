@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Functions Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Functions Demo</h1>
+
+    <h2>Concat</h2>
+    <p id="concatResult"></p>
+
+    <h2>CopyWithin</h2>
+    <p id="copyWithinResult"></p>
+
+    <h2>Map</h2>
+    <p id="mapResult"></p>
+
+    <h2>Every</h2>
+    <p id="everyResult"></p>
+
+    <h2>Some</h2>
+    <p id="someResult"></p>
+
+    <h2>Filter</h2>
+    <p id="filterResult"></p>
+
+    <h2>Find</h2>
+    <p id="findResult"></p>
+
+    <h2>FindIndex</h2>
+    <p id="findIndexResult"></p>
+
+    <h2>IndexOf</h2>
+    <p id="indexOfResult"></p>
+
+    <h2>Push</h2>
+    <p id="pushResult"></p>
+
+    <h2>Pop</h2>
+    <p id="popResult"></p>
+
+    <h2>Shift</h2>
+    <p id="shiftResult"></p>
+
+    <h2>LastIndexOf</h2>
+    <p id="lastIndexOfResult"></p>
+
+    <script>
+// Concat
+const fruits = ['apple', 'banana'];
+const vegetables = ['carrot', 'potato'];
+const concatResult = fruits.concat(vegetables);
+document.getElementById('concatResult').textContent = concatResult;
+
+// CopyWithin
+const copyWithinArr = [1, 2, 3, 4, 5];
+copyWithinArr.copyWithin(0, 3);
+document.getElementById('copyWithinResult').textContent = copyWithinArr;
+
+// Map
+const numbers = [1, 2, 3, 4, 5];
+const mapResult = numbers.map((num) => num * 2);
+document.getElementById('mapResult').textContent = mapResult;
+
+// Every
+const everyArr = [10, 20, 30, 40, 50];
+const everyResult = everyArr.every((num) => num > 5);
+document.getElementById('everyResult').textContent = everyResult;
+
+// Some
+const someArr = [10, 20, 30, 40, 50];
+const someResult = someArr.some((num) => num < 20);
+document.getElementById('someResult').textContent = someResult;
+
+// Filter
+const filterArr = [10, 20, 30, 40, 50];
+const filterResult = filterArr.filter((num) => num > 30);
+document.getElementById('filterResult').textContent = filterResult;
+
+// Find
+const findArr = [10, 20, 30, 40, 50];
+const findResult = findArr.find((num) => num > 30);
+document.getElementById('findResult').textContent = findResult;
+
+// FindIndex
+const findIndexArr = [10, 20, 30, 40, 50];
+const findIndexResult = findIndexArr.findIndex((num) => num === 30);
+document.getElementById('findIndexResult').textContent = findIndexResult;
+
+// IndexOf
+const indexOfArr = [10, 20, 30, 40, 50];
+const indexOfResult = indexOfArr.indexOf(30);
+document.getElementById('indexOfResult').textContent = indexOfResult;
+
+// Push
+const pushArr = [1, 2, 3];
+pushArr.push(4, 5);
+document.getElementById('pushResult').textContent = pushArr;
+
+// Pop
+const popArr = [1, 2, 3, 4, 5];
+const poppedElement = popArr.pop();
+document.getElementById('popResult').textContent = `Popped element: ${poppedElement}`;
+
+// Shift
+const shiftArr = [1, 2, 3, 4, 5];
+const shiftedElement = shiftArr.shift();
+document.getElementById('shiftResult').textContent = `Shifted element: ${shiftedElement}`;
+
+// LastIndexOf
+const lastIndexOfArr = [10, 20, 30, 40, 30];
+const lastIndexOfResult = lastIndexOfArr.lastIndexOf(30);
+document.getElementById('lastIndexOfResult').textContent = lastIndexOfResult;
+
+
+    </script>
+</body>
+</html>

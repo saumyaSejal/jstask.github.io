@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <form>
+        <label for="fname"><b>First name:</b></label>
+        <input type="text" name="" value="" id="fname">
+        <p id="fnameError"></p><br>
+
+        <label for="lname"><b>Last name:</b></label>
+        <input type="text" id="lname">
+        <p id="lnameError"></p><br>
+
+        <label for="mail"><b>Email:</b></label>
+        <input type="email" id="mail">
+        <p id="mailError"></p><br>
+
+        <label for="gen"><b>Gender:</b></label>
+        <input type="radio" name="gen" value="Male" id="m">Male
+        <input type="radio" name="gen" value="female" id="f">Female
+        <p id="genError"></p><br>
+
+        <label for="age"><b>Age:</b></label>
+        <input type="text" name="" value="" id="age">
+        <p id="ageError"></p><br>
+
+        <label for="ph"><b>Phone Number:</b></label>
+        <input type="tel" name="" value="" id="ph">
+        <p id="phError"></p><br>
+
+        <label for="ad"><b>Address:</b></label>
+        <textarea cols="50" row="10" id="ad"></textarea>
+        <p id="adError"></p><br>
+
+        <label for="state"><b>State:</b></label>
+        <input type="text" name="" value="" id="state">
+        <p id="stateError"></p><br>
+
+        <label for="con"><b>Country:</b></label>
+        <select id="con">
+            <option selected="true">Choose your country</option>
+            <option>India</option>
+            <option>China</option>
+            <option>Singapore</option>
+            <option>Japan</option>
+        </select>
+        <p id="conError"></p><br>
+
+        <label for="lang"><b>Languages:</b></label>
+        <input type="checkbox" name="lang" value=""><b>English</b>
+        <input type="checkbox" name="lang" value=""><b>Kannada</b>
+        <input type="checkbox" name="lang" value=""><b>Hindi</b>
+        <input type="checkbox" name="lang" value=""><b>Telugu</b>
+        <br>
+
+        <input type="checkbox"> Hereby I declare all the given details are true<br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        // Get form elements
+        const form = document.querySelector('form');
+        const fname = document.getElementById('fname');
+        const lname = document.getElementById('lname');
+        const mail = document.getElementById('mail');
+        const age = document.getElementById('age');
+        const ph = document.getElementById('ph');
+        const con = document.getElementById('con');
+
+        // Define regex patterns for validation
+        const namePattern = /^[a-zA-Z]+$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const agePattern = /^\d+$/;
+        const phonePattern = /^\d{10}$/;
+
+        // Function to validate the form
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Validate first name
+            if (!fname.value.match(namePattern)) {
+                document.getElementById('fnameError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('fnameError').innerHTML = '';
+            }
+
+            // Validate last name
+            if (!lname.value.match(namePattern)) {
+                document.getElementById('lnameError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('lnameError').innerHTML = '';
+            }
+
+            // Validate email
+            if (!mail.value.match(emailPattern)) {
+                document.getElementById('mailError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('mailError').innerHTML = '';
+            }
+
+            // Validate age
+            if (!age.value.match(agePattern)) {
+                document.getElementById('ageError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('ageError').innerHTML = '';
+            }
+
+            // Validate phone number
+            if (!ph.value.match(phonePattern)) {
+                document.getElementById('phError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('phError').innerHTML = '';
+            }
+
+            // Validate country selection
+            if (con.value === 'Choose your country') {
+                document.getElementById('conError').innerHTML = 'POOR';
+                return;
+            } else {
+                document.getElementById('conError').innerHTML = '';
+            }
+
+            // If all validations pass, submit the form
+            alert('Form submitted successfully!');
+            form.submit();
+        }
+
+        // Add event listener for form submission
+        form.addEventListener('submit', validateForm);
+    </script>
+</body>
+</html>

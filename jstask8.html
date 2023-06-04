@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Train Animation</title>
+  <style>
+    #train {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transition: left 5s linear;
+    }
+  </style>
+  <script>
+    var trainElement;
+    var animationInterval;
+    
+    function startAnimation() {
+      trainElement = document.getElementById('train');
+      trainElement.style.left = '100%';
+      animationInterval = setInterval(moveTrain, 5000);
+    }
+    
+    function moveTrain() {
+      trainElement.style.left = '0';
+    }
+    
+    function stopAnimation() {
+      clearInterval(animationInterval);
+      trainElement.style.left = '0';
+    }
+  </script>
+</head>
+<body>
+ 
+  
+  <div id="train"><img src="jstasks\toy-train.png"></div>
+  <div>
+    <h3 style="color:blue">Click the following buttons to handle animation</h3>
+  <button onclick="startAnimation()">Start</button>
+  <button onclick="stopAnimation()">Stop</button>
+  </div>
+</body>
+</html>

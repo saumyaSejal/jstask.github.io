@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 1</title>
+  <script>
+    function goToPage2() {
+      window.location.href="jstasks\jstask2b.html"; // Go to Page 2
+    }
+    
+    function goToPage3() {
+        window.location.href="jstasks\jstask2c.html"; // Go to Page 3
+    }
+    
+    function goBackToPage2() {
+      history.back(); // Go back to Page 2
+    }
+  </script>
+</head>
+<body>
+  <h1>Page 1</h1>
+  <button onclick="goToPage2()">Go to Page 2</button>
+  <button onclick="goToPage3()">Go to Page 3</button>
+  <button onclick="goBackToPage2()">Go Back to Page 2</button>
+</body>
+</html>

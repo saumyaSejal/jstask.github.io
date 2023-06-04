@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 2</title>
+  <script>
+function validate(){
+    var name=String(document.getElementById("n").value);
+var email=String(document.getElementById("e").value);
+var web=String(document.getElementById("w").value);
+var msg=String(document.getElementById("m").value);
+if(name="" || email=="" || web=="" || msg==""){
+    document.getElementById("nerr").innerText="This field is required";
+    document.getElementById("eerr").innerText="A valid email address is required";
+document.getElementById("werr").innerText="A valid url is required";
+document.getElementById("merr").innerText="This field is required";
+}  
+
+else if(name==""){
+    document.getElementById("nerr").innerText="This field is required";
+}
+else if(email==""){
+    document.getElementById("eerr").innerText="A valid email address is required";
+}
+else if(web==""){
+    document.getElementById("werr").innerText="A valid url is required";
+}
+else if(msg==""){
+    document.getElementById("merr").innerText="This field is required";
+}
+}
+  </script>
+</head>
+
+<style>
+    input,button{
+        margin:8px;
+        
+    }
+    p{
+        color:crimson;
+        display:inline-block;
+    
+    }
+    button{
+        display:block;
+    }
+</style>
+<body>
+ <form>
+    Name:<input type="text" id="n"><p id="nerr"></p><br><br>
+    Email:<input type="email" id="e"><p id="eerr"></p><br><br>
+    Website:<input type="text" id="w"><p id="werr"></p><br><br>
+    Message:<textarea rows="10" cols="30" id="m"></textarea><p id="merr"></p>
+    <button type="button" onclick="validate()">Submit</button>
+ </form>
+
+
+  
+</body>
+</html>

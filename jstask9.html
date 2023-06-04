@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var phone = document.getElementById('phone').value;
+      var gender = document.querySelector('input[name="gender"]:checked');
+      var language = document.getElementById('language').value;
+      var zipCode = document.getElementById('zipCode').value;
+      var about = document.getElementById('about').value;
+      
+      // Regular expressions for validation
+      var nameRegex = /^[a-zA-Z\s]+$/;
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      var phoneRegex = /^\d{10}$/;
+      var zipCodeRegex = /^\d{5}$/;
+      
+      // Perform validation
+      if (!nameRegex.test(name)) {
+        alert('Please enter a valid name.');
+        return false;
+      }
+      
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      
+      if (!passwordRegex.test(password)) {
+        alert('Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit.');
+        return false;
+      }
+      
+      if (!phoneRegex.test(phone)) {
+        alert('Please enter a valid phone number.');
+        return false;
+      }
+      
+      if (!gender) {
+        alert('Please select a gender.');
+        return false;
+      }
+      
+      if (language === '') {
+        alert('Please select a language.');
+        return false;
+      }
+      
+      if (!zipCodeRegex.test(zipCode)) {
+        alert('Please enter a valid zip code.');
+        return false;
+      }
+      
+      if (about === '') {
+        alert('Please provide some information about yourself.');
+        return false;
+      }
+      
+      // All fields are valid
+      alert('Registration successful!');
+      return true;
+    }
+  </script>
+</head>
+<body>
+<center>
+    <div style="background: rgb(252, 47, 143);">
+        
+    <form style="background: rgb(111, 4, 54); color:white;margin:12px; width: max-content;" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" required><br><br>
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required><br><br>
+      
+      <label for="gender">Gender:</label>
+      <input type="radio" name="gender" value="male">Male
+      <input type="radio" name="gender" value="female">Female
+      <br>
+      <br>
+      <label for="language">Language:</label>
+      <select id="language" required>
+        <option value="">Select a language</option>
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+      </select><br><br>
+      
+      <label for="zipCode">Zip Code:</label>
+      <input type="text" id="zipCode" required><br><br>
+      
+      <label for="about">About:</label><br>
+      <textarea id="about" rows="4" cols="30" required></textarea><br><br>
+      
+      <input type="submit" value="Register">
+    </form>
+    </div>
+</center>
+</body>
+</html>

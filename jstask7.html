@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse String</title>
+  <script>
+    function mul() {
+     var a=Number(document.getElementById("in1").value);
+     var b=Number(document.getElementById("in2").value);
+     var res=a*b;
+     document.getElementById('res').innerText=res;
+    }
+
+    function divide() {
+     var a=Number(document.getElementById("in1").value);
+     var b=Number(document.getElementById("in2").value);
+     if(b==0){
+        document.getElementById('res').innerText="Not Possible";
+     }
+     else{
+        var res=a/b;
+        document.getElementById('res').innerText=res;
+     }
+     
+    }
+  </script>
+</head>
+<body>
+ 
+  <form style="margin:48px auto">
+    <label for="inputString">1st Number:</label><br>
+    <input type="text" id="in1" name="inputString"><br><br>
+
+    <label for="inputString">2nd Number:</label><br>
+    <input type="text" id="in2" name="inputString"><br><br>
+
+    <button type="button" onclick="mul()">Multiply</button>
+    <button type="button" onclick="divide()">Divide</button>
+  </form>
+  The Result Is:
+  <p id="res"></p>
+</body>
+</html>

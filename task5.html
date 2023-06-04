@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 2</title>
+  <script>
+function revNum(){
+    var number=Number(document.getElementById("n").value);
+    console.log(number)
+    var reversedNumber = 0;
+  
+  while (number !== 0) {
+    reversedNumber = (reversedNumber * 10) + (number % 10);
+    number = Math.floor(number / 10);      
+
+    }
+    document.getElementById("nerr").innerText=reversedNumber;
+    console.log(reversedNumber);
+
+}
+
+  </script>
+</head>
+
+<style>
+p{
+    color:greenyellow;
+    font-size:20pt;
+}
+</style>
+<body>
+ <form>
+    Enter number:<input type="text" id="n"><br><br>
+    <button type="button" onclick="revNum()">Reverse</button><br>
+    <p id="nerr"></p>
+ </form>
+
+
+  
+</body>
+</html>

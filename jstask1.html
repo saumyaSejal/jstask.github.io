@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Display</title>
+  <script>
+    function printDate() {
+      var currentDate = new Date();
+      
+      // Get the day, month, and year
+      var day = currentDate.getDate();
+      var month = currentDate.toLocaleString('en-us', { month: 'long' });
+      var year = currentDate.getFullYear();
+      
+      // Format the date
+      var formattedDate = ('0' + day).slice(-2) + '/' + month + '/' + year;
+      
+      // Display the formatted date
+      document.getElementById('dateOutput').innerHTML = formattedDate;
+    }
+
+    function showfulltime(){
+        const d2=new Date();
+        document.getElementById('timeOutput').innerText=d2.toString();
+
+    }
+  </script>
+</head>
+<body>
+ 
+  <button onclick="printDate()">Show Date</button>
+  <p id="dateOutput"></p>
+  <button onclick="showfulltime()">Show Time</button>
+  <p id="timeOutput"></p>
+</body>
+</html>
